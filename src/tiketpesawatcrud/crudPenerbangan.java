@@ -297,8 +297,6 @@ public class crudPenerbangan extends javax.swing.JInternalFrame {
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel4, spinJumlahKursi});
 
-        jPanel2.setBackground(new java.awt.Color(0, 102, 255));
-
         tbRute.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -307,7 +305,7 @@ public class crudPenerbangan extends javax.swing.JInternalFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Kode Rute", "Asal", "Tujuan", "Waktu Datang ", "Waktu Tiba"
+                "Kode Rute", "Asal", "Tujuan", "Waktu Berangkat ", "Waktu Tiba"
             }
         ));
         tbRute.setRowHeight(40);
@@ -340,8 +338,9 @@ public class crudPenerbangan extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel6.setBackground(new java.awt.Color(204, 0, 102));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setForeground(new java.awt.Color(255, 51, 102));
         jLabel6.setText("Cari Data Rute");
 
         tbTerbang.setModel(new javax.swing.table.DefaultTableModel(
@@ -364,7 +363,7 @@ public class crudPenerbangan extends javax.swing.JInternalFrame {
         jScrollPane3.setViewportView(tbTerbang);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setForeground(new java.awt.Color(255, 0, 51));
         jLabel8.setText("Cari Data Penerbangan");
 
         cmbCariPesawat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "kode_pesawat", "nama" }));
@@ -398,8 +397,9 @@ public class crudPenerbangan extends javax.swing.JInternalFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
                         .addComponent(jLabel6)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(cmbCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
                         .addComponent(txtCari, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -754,7 +754,7 @@ try {
 
     class MyTableModel extends DefaultTableModel {
     public MyTableModel() {
-        super(new Object[]{"Kode Rute", "Asal", "Tujuan", "Waktu Kedatangan", "Waktu Tiba"}, 0);
+        super(new Object[]{"Kode Rute", "Asal", "Tujuan", "Waktu Berangkat", "Waktu Tiba"}, 0);
     }
 
     @Override

@@ -110,7 +110,7 @@ public class crudRute extends javax.swing.JInternalFrame {
         localeAsal = new com.toedter.components.JLocaleChooser();
         localeTujuan = new com.toedter.components.JLocaleChooser();
         jLabel7 = new javax.swing.JLabel();
-        txtWaktuDatang = new javax.swing.JTextField();
+        txtWaktuBerangkat = new javax.swing.JTextField();
         txtWaktuTiba = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -131,7 +131,7 @@ public class crudRute extends javax.swing.JInternalFrame {
 
         jLabel4.setText("Tujuan");
 
-        jLabel5.setText("Waktu Kedatangan");
+        jLabel5.setText("Waktu Berangkat");
 
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -197,22 +197,17 @@ public class crudRute extends javax.swing.JInternalFrame {
                                 .addComponent(txtId)
                                 .addGap(87, 87, 87))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(37, 37, 37)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4))
-                                .addGap(59, 59, 59))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel5)
-                                .addGap(18, 18, 18)))
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5))
+                        .addGap(29, 29, 29)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(localeTujuan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(localeAsal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtWaktuDatang)
+                            .addComponent(txtWaktuBerangkat)
                             .addComponent(txtWaktuTiba))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(btnExit)
@@ -240,7 +235,7 @@ public class crudRute extends javax.swing.JInternalFrame {
                     .addComponent(jLabel4))
                 .addGap(38, 38, 38)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtWaktuDatang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtWaktuBerangkat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -258,9 +253,7 @@ public class crudRute extends javax.swing.JInternalFrame {
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnExit, btnHapus, btnReset, btnUpdate});
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtWaktuDatang, txtWaktuTiba});
-
-        jPanel2.setBackground(new java.awt.Color(0, 102, 255));
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtWaktuBerangkat, txtWaktuTiba});
 
         tbRute.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -270,7 +263,7 @@ public class crudRute extends javax.swing.JInternalFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Kode Rute", "Asal", "Tujuan", "Waktu Datang ", "Waktu Tiba"
+                "Kode Rute", "Asal", "Tujuan", "Waktu Berangkat ", "Waktu Tiba"
             }
         ));
         tbRute.setRowHeight(40);
@@ -303,7 +296,7 @@ public class crudRute extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setForeground(new java.awt.Color(255, 0, 0));
         jLabel6.setText("Cari Data");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -376,7 +369,7 @@ public class crudRute extends javax.swing.JInternalFrame {
         String id = txtId.getText();
         String asal = (String)localeAsal.getSelectedItem();
         String tujuan = (String)localeTujuan.getSelectedItem();
-        String waktuDatang = txtWaktuDatang.getText(); // Replace textField with your actual JTextField variable
+        String waktuDatang = txtWaktuBerangkat.getText(); // Replace textField with your actual JTextField variable
         String waktuTb = txtWaktuTiba.getText(); // Replace textField with your actual JTextField variable
 
    
@@ -487,7 +480,7 @@ try {
             String id = txtId.getText();
             String asal = (String)localeAsal.getSelectedItem();
             String tujuan = (String)localeTujuan.getSelectedItem();
-            String waktuDatang = txtWaktuDatang.getText(); // Replace textField with your actual JTextField variable
+            String waktuDatang = txtWaktuBerangkat.getText(); // Replace textField with your actual JTextField variable
             String waktuTb = txtWaktuTiba.getText(); // Replace textField with your actual JTextField variable
 
         // Define the date format expected from the text field
@@ -578,7 +571,7 @@ if (selectedRow >= 0) {
     String id = tbRute.getValueAt(selectedRow, 0).toString();
     String cmbAsal = tbRute.getValueAt(selectedRow, 1).toString();
     String cmbTujuan = tbRute.getValueAt(selectedRow, 2).toString();
-    String waktuDatang = tbRute.getValueAt(selectedRow, 3).toString();
+    String waktuBerangkat = tbRute.getValueAt(selectedRow, 3).toString();
     String waktuTb = tbRute.getValueAt(selectedRow, 4).toString();
 
     // Set data to txtId, txtKode, localeAsal, localeTujuan
@@ -599,7 +592,7 @@ if (selectedRow >= 0) {
             break;
         }
     }
-    txtWaktuDatang.setText(waktuDatang);
+    txtWaktuBerangkat.setText(waktuBerangkat);
     txtWaktuTiba.setText(waktuTb);
 
 } else {
@@ -610,7 +603,7 @@ if (selectedRow >= 0) {
 
     class MyTableModel extends DefaultTableModel {
     public MyTableModel() {
-        super(new Object[]{"Kode Rute", "Asal", "Tujuan", "Waktu Kedatangan", "Waktu Tiba"}, 0);
+        super(new Object[]{"Kode Rute", "Asal", "Tujuan", "Waktu Berangkat", "Waktu Tiba"}, 0);
     }
 
     @Override
@@ -619,12 +612,6 @@ if (selectedRow >= 0) {
     }
 }
     
-    private Icon createImageIcon(byte[] bytes, int width, int height) {
-    if (bytes == null) {
-        return null;
-    }
-    return new ImageIcon(new ImageIcon(bytes).getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH));
-}
     
    private void tampilDataRute() {
     Logger logger = Logger.getLogger(crudRute.class.getName());
@@ -764,7 +751,7 @@ private void prepareCmb() {
       txtCari.setText("");
       localeAsal.setSelectedIndex(1);
       localeTujuan.setSelectedIndex(1);
-      txtWaktuDatang.setText("");
+      txtWaktuBerangkat.setText("");
       txtWaktuTiba.setText("");
 
     }
@@ -808,7 +795,7 @@ private void prepareCmb() {
     private javax.swing.JTable tbRute;
     private java.awt.TextField txtCari;
     private javax.swing.JLabel txtId;
-    private javax.swing.JTextField txtWaktuDatang;
+    private javax.swing.JTextField txtWaktuBerangkat;
     private javax.swing.JTextField txtWaktuTiba;
     // End of variables declaration//GEN-END:variables
 }

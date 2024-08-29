@@ -85,7 +85,7 @@ public class crudCustomer extends javax.swing.JInternalFrame {
         jPanel1.setForeground(new java.awt.Color(204, 204, 204));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel1.setText("CRUD CUSTOMER");
+        jLabel1.setText("CUSTOMER");
 
         jLabel2.setText("Nama");
 
@@ -171,7 +171,7 @@ public class crudCustomer extends javax.swing.JInternalFrame {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtUsia, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnTambah)
@@ -228,8 +228,6 @@ public class crudCustomer extends javax.swing.JInternalFrame {
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnExit, btnHapus, btnReset, btnUpdate});
-
-        jPanel2.setBackground(new java.awt.Color(0, 102, 255));
 
         tbCust.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

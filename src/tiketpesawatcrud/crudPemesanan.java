@@ -52,12 +52,16 @@ public class crudPemesanan extends javax.swing.JInternalFrame {
 //    SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
 //    return formatter.format(spinnerValue);
 //}
+ private int idLogin;
 
     /**
      * Creates new form addCustomer
+     * @param idLogin
      */
-    public crudPemesanan() {
+    public crudPemesanan(int idLogin) {
+        this.idLogin = idLogin;
         initComponents();
+        txtUser.setText(String.valueOf(this.idLogin));
 //        addTimeChoosers();
         autoID();
         tampilDataPesawat();
@@ -354,8 +358,6 @@ public class crudPemesanan extends javax.swing.JInternalFrame {
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel4, spinJumlahPenumpang});
 
-        jPanel2.setBackground(new java.awt.Color(0, 102, 255));
-
         cmbCariPemesanan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "kode_rute", "nama" }));
         cmbCariPemesanan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -379,7 +381,7 @@ public class crudPemesanan extends javax.swing.JInternalFrame {
         });
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setForeground(new java.awt.Color(255, 0, 0));
         jLabel6.setText("Cari Data Pemesanan");
 
         tbTerbang.setModel(new javax.swing.table.DefaultTableModel(
@@ -402,7 +404,7 @@ public class crudPemesanan extends javax.swing.JInternalFrame {
         jScrollPane3.setViewportView(tbTerbang);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setForeground(new java.awt.Color(255, 0, 0));
         jLabel8.setText("Cari Data Penerbangan");
 
         cmbCariPesawat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "kode_pesawat", "nama" }));
@@ -474,7 +476,7 @@ public class crudPemesanan extends javax.swing.JInternalFrame {
         });
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setForeground(new java.awt.Color(255, 0, 0));
         jLabel11.setText("Cari Data Customer");
 
         txtCariCust.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
@@ -576,7 +578,7 @@ public class crudPemesanan extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(129, Short.MAX_VALUE)
+                .addContainerGap(108, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 635, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1286,7 +1288,7 @@ private void prepareCmbCust() {
       spinJumlahPenumpang.setValue(0);
       txtPembeli.setText("");
       txtRute.setText("");
-      txtUser.setText("");
+      txtUser.setText(String.valueOf(idLogin));
       txtPesawat.setText("");
       txtHargaSatu.setText("");
       txtTotalHarga.setText("");

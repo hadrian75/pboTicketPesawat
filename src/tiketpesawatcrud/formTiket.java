@@ -15,65 +15,66 @@ import javax.swing.ImageIcon;
  * @author Durian
  */
 public class formTiket extends javax.swing.JFrame {
-
+ private int idLogin;
     /**
      * Creates new form formTiket
+     * @param username
      */
-    public formTiket() {
+    public formTiket(int idLogin) {
+        this.idLogin = idLogin;
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
-        scaleBg();
-
+//        scaleBg();
     }
-   private void scaleBg() {
-    // Load the original image
-    ImageIcon icon = new ImageIcon("C:\\Users\\Durian\\OneDrive\\Documents\\NetBeansProjects\\tiketpesawatCRUD\\src\\images\\airplane.png");
-    Image img = icon.getImage();
-
-    // Calculate the aspect ratio of the original image
-    double aspectRatio = (double) img.getWidth(null) / img.getHeight(null);
-
-    // Define the target dimensions
-    int targetWidth = 1920;
-    int targetHeight = 1080;
-
-    // Calculate the scaled dimensions while preserving aspect ratio
-    int scaledWidth = targetWidth;
-    int scaledHeight = (int) (scaledWidth / aspectRatio);
-
-    // If the scaled height exceeds the target height, adjust the dimensions
-    if (scaledHeight > targetHeight) {
-        scaledHeight = targetHeight;
-        scaledWidth = (int) (scaledHeight * aspectRatio);
-    }
-
-    // Scale the image
-    Image scaledImg = img.getScaledInstance(scaledWidth, scaledHeight, Image.SCALE_SMOOTH);
-
-    // Create a scaled ImageIcon
-    ImageIcon scaledIcon = new ImageIcon(scaledImg);
-
-    // Set the scaled image as the icon for bg component
-    bg.setIcon(scaledIcon);
-}
-
-
-private Image cropImage(Image img, int x, int y, int width, int height) {
-    // Create a new image with the specified width and height
-    BufferedImage croppedImg = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
-
-    // Create a graphics object to draw the cropped image
-    Graphics2D g2d = croppedImg.createGraphics();
-
-    // Draw the portion of the original image specified by the cropping rectangle onto the new image
-    g2d.drawImage(img, 0, 0, width, height, x, y, x + width, y + height, null);
-
-    // Dispose the graphics object
-    g2d.dispose();
+//   private void scaleBg() {
+//    // Load the original image
+//    ImageIcon icon = new ImageIcon("C:\\Users\\Durian\\OneDrive\\Documents\\NetBeansProjects\\tiketpesawatCRUD\\src\\images\\airplane.png");
+//    Image img = icon.getImage();
+//
+//    // Calculate the aspect ratio of the original image
+//    double aspectRatio = (double) img.getWidth(null) / img.getHeight(null);
+//
+//    // Define the target dimensions
+//    int targetWidth = 1920;
+//    int targetHeight = 1080;
+//
+//    // Calculate the scaled dimensions while preserving aspect ratio
+//    int scaledWidth = targetWidth;
+//    int scaledHeight = (int) (scaledWidth / aspectRatio);
+//
+//    // If the scaled height exceeds the target height, adjust the dimensions
+//    if (scaledHeight > targetHeight) {
+//        scaledHeight = targetHeight;
+//        scaledWidth = (int) (scaledHeight * aspectRatio);
+//    }
+//
+//    // Scale the image
+//    Image scaledImg = img.getScaledInstance(scaledWidth, scaledHeight, Image.SCALE_SMOOTH);
+//
+//    // Create a scaled ImageIcon
+//    ImageIcon scaledIcon = new ImageIcon(scaledImg);
+//
+//    // Set the scaled image as the icon for bg component
+//    bg.setIcon(scaledIcon);
+//}
+//
+//
+//private Image cropImage(Image img, int x, int y, int width, int height) {
+//    // Create a new image with the specified width and height
+//    BufferedImage croppedImg = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+//
+//    // Create a graphics object to draw the cropped image
+//    Graphics2D g2d = croppedImg.createGraphics();
+//
+//    // Draw the portion of the original image specified by the cropping rectangle onto the new image
+//    g2d.drawImage(img, 0, 0, width, height, x, y, x + width, y + height, null);
+//
+//    // Dispose the graphics object
+//    g2d.dispose();
 
     // Return the cropped image
-    return croppedImg;
-}
+//    return croppedImg;
+//}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -189,7 +190,7 @@ private Image cropImage(Image img, int x, int y, int width, int height) {
 
     private void crudPesanTiketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crudPesanTiketActionPerformed
         // TODO add your handling code here:
-        crudPemesanan cPem = new crudPemesanan();
+        crudPemesanan cPem = new crudPemesanan(idLogin);
         jDesktopPane1.add(cPem);
         cPem.setVisible(true);
     }//GEN-LAST:event_crudPesanTiketActionPerformed
@@ -238,7 +239,7 @@ private Image cropImage(Image img, int x, int y, int width, int height) {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new formTiket().setVisible(true);
+                new formTiket(1).setVisible(true);
             }
         });
     }

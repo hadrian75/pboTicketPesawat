@@ -25,6 +25,8 @@ public class loginForm extends javax.swing.JFrame {
    Connection con;
    PreparedStatement pst;
 
+   
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -48,10 +50,10 @@ public class loginForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 153, 0));
         jPanel1.setForeground(new java.awt.Color(102, 204, 255));
 
-        jPanel3.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel3.setBackground(new java.awt.Color(255, 255, 0));
 
         jLabel2.setText("Username");
 
@@ -134,10 +136,10 @@ public class loginForm extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("FORM LOGIN");
 
-        jLabel4.setFont(new java.awt.Font("Embassy BT", 2, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Dubai Medium", 2, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("D'Airplane");
+        jLabel4.setText("DEX AIR");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -227,10 +229,11 @@ public class loginForm extends javax.swing.JFrame {
                 rs = pst.executeQuery();
                 
                 if(rs.next()){
-                
-                  formTiket m = new formTiket();
+                 int idLogin = rs.getInt("id");
+                  formTiket m = new formTiket(idLogin);
                     this.hide();
                         m.setVisible(true);
+                        
                 } else {
                     
                     JOptionPane.showMessageDialog(this, "Username atau Password Salah");
